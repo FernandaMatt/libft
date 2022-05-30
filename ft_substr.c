@@ -6,7 +6,7 @@
 /*   By: fcaetano <fernandacunha@id.uff.br>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 17:56:37 by fcaetano          #+#    #+#             */
-/*   Updated: 2022/05/09 17:56:41 by fcaetano         ###   ########.fr       */
+/*   Updated: 2022/05/30 14:23:25 by fcaetano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*substr;
 
-	substr = malloc((len)*sizeof(*s));
+	if (start >= ft_strlen(s))
+		return(ft_strdup(""));
+	substr = malloc((len+1)*sizeof(*s));
 	if (substr == NULL)
 		return (NULL);
 	ft_strlcpy(substr, &s[start], len+1);

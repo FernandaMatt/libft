@@ -1,46 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fcaetano <fernandacunha@id.uff.br>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/09 16:03:23 by fcaetano          #+#    #+#             */
-/*   Updated: 2022/05/30 16:33:46 by fcaetano         ###   ########.fr       */
+/*   Created: 2022/05/30 17:47:30 by fcaetano          #+#    #+#             */
+/*   Updated: 2022/05/30 17:56:27 by fcaetano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *src)
+**char ft_split(char const *s, char c)
 {
-	char	*ret;
-	int		c;
 
-	c = ft_strlen(src) + 1;
-	ret = malloc(c * sizeof(*ret));
-	if (!ret)
-		return (ret);
-	c = 0;
-	while (src[c])
-	{
-		ret[c] = src[c];
-		c++;
-	}
-	ret[c] = 0;
-	return (ret);
 }
 
 /* #include <stdio.h>
 int main(void)
 {
-	char src[] = "Depois uma string longa, tão longa quanto moulinette deixa.";
-	char c[] = "Antes";
-	char *targ;
+	char test[] = "./a.out test1 test2 test3";
+	char sep[] = ",";
+	char **ret;
+	int i;
 
-	targ = c;
-	printf("%s\n", targ);
-	targ = ft_strdup(src);
-	printf("%s\n", targ);
-	return (0);
+	ret = ft_split(test, sep);
+	while(*ret)
+	{
+		printf("%s\n", *ret++);
+	}
 } */
