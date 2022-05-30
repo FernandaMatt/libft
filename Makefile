@@ -6,13 +6,17 @@ SRCS	= ${addprefix ${SPATH}, ${SRC}}
 
 OBJS	= ${SRCS:.c=.o}
 
-NAME	= libft.a
+NAME	= libft.so
 
 CC		= cc
 
 HEADS	= ./
 
 CFLAGS	= -Wall -Wextra -Werror
+
+so:
+	$(CC) -nostartfiles -fpic $(CFLAGS) $(SRCS)
+	gcc -nostartfiles -shared -o libft.so $(OBJS)
 
 .c.o:
 			${CC} ${CFLAGS} -c -I ${HEADS} $< -o ${<:.c=.o}
