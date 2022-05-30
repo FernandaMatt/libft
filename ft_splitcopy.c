@@ -6,11 +6,42 @@
 /*   By: fcaetano <fernandacunha@id.uff.br>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 17:47:30 by fcaetano          #+#    #+#             */
-/*   Updated: 2022/05/30 19:46:54 by fcaetano         ###   ########.fr       */
+/*   Updated: 2022/05/30 19:10:42 by fcaetano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
+
+size_t ft_strlen(const char *str)
+{
+	size_t n;
+
+	n = 0;
+	while (str[n])
+	{
+		n++;
+	}
+	return (n);
+}
+
+char	*ft_strdup(const char *src)
+{
+	char	*ret;
+	int		c;
+
+	c = ft_strlen(src) + 1;
+	ret = malloc(c * sizeof(*ret));
+	if (!ret)
+		return (ret);
+	c = 0;
+	while (src[c])
+	{
+		ret[c] = src[c];
+		c++;
+	}
+	ret[c] = 0;
+	return (ret);
+}
 
 char **ft_split(char const *s, char c)
 {
@@ -22,12 +53,6 @@ char **ft_split(char const *s, char c)
 
 	nsep = 0;
 	i = 0;
-	if (!s)
-	{
-		ret = malloc(sizeof(char *));
-		*ret = NULL;
-		return (ret);
-	}
 	str = ft_strdup(s);
 	while(str[i])
 	{
@@ -38,7 +63,7 @@ char **ft_split(char const *s, char c)
 		}
 		i++;
 	}
-	ret = malloc((nsep + 2) * sizeof(char *));
+	ret = malloc((nsep + 2) * 8);
 	if (ret == NULL)
 		return (ret);
 	ret = &str;
@@ -48,7 +73,7 @@ char **ft_split(char const *s, char c)
 	{
 		if (str[i] == 0)
 		{
-			ret[iret] = &str[i+1];
+			ret[iret] = &str[i + 1];
 			iret++;
 		}
 		i++;
@@ -57,10 +82,10 @@ char **ft_split(char const *s, char c)
 	return (ret);
 }
 
-/*#include <stdio.h>
+#include <stdio.h>
 int main(void)
 {
-	char test[] = "./a.out test1 test2 test3";
+	char test[] = "./a t1";
 	char sep = ' ';
 	char **ret;
 
@@ -69,4 +94,4 @@ int main(void)
 	{
 		printf("%s\n", *ret++);
 	}
-}*/
+}

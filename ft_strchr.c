@@ -25,7 +25,7 @@ char *ft_strchr(const char *s, int c)
 	return (NULL);
 }
 
-#include <stdio.h>
+/* #include <stdio.h>
 int main(void)
 {
     char s[] = "qweretyu";
@@ -37,5 +37,4 @@ int main(void)
     ret = ft_strchr(s, c);
     printf("%s\n", ret);
     return (0);
-}
-
+} */
