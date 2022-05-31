@@ -6,7 +6,7 @@
 /*   By: fcaetano <fernandacunha@id.uff.br>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 15:04:52 by fcaetano          #+#    #+#             */
-/*   Updated: 2022/05/30 17:46:32 by fcaetano         ###   ########.fr       */
+/*   Updated: 2022/05/31 17:21:57 by fcaetano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,6 @@ int	ft_tolower(int c);
 int	ft_toupper(int c);
 char    *ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strtrim(char const *s1, char const *set);
+char	*ft_itoa(int n);
 
 #endif
