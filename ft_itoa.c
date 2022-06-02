@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fcaetano <fernandacunha@id.uff.br>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/02 14:59:58 by fcaetano          #+#    #+#             */
+/*   Updated: 2022/06/02 15:30:36 by fcaetano         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdlib.h>
 
 static int	ft_mod(int n)
@@ -9,30 +21,32 @@ static int	ft_mod(int n)
 
 static int	ft_strsize(int n)
 {
-	int size;
+	int	size;
 
-	size = 1;
-	if (n < 0)
+	size = 0;
+	if (n <= 0)
 		size++;
-	while (n/10 < -1 || n/10 > 1)
+	while (n <= -1 || n >= 1)
 	{
 		size++;
 		n /= 10;
 	}
-	return(size);
+	return (size);
 }
 
 char	*ft_itoa(int n)
 {
-	int size;
-	char *ret;
+	int		size;
+	char	*ret;
 
 	size = ft_strsize(n);
-	ret = malloc(size * sizeof(char));
+	ret = malloc((size + 1) * sizeof(char));
 	if (!ret)
 		return (ret);
 	ret[size--] = 0;
-	while (n < -1 || n > 1)
+	if (n == 0)
+		ret[size--] = 0 + '0';
+	while (n <= -1 || n >= 1)
 	{
 		ret[size--] = ft_mod(n % 10) + '0';
 		n /= 10;
@@ -45,7 +59,7 @@ char	*ft_itoa(int n)
 #include <stdio.h>
 int main(void)
 {
-	int n = -2147483648;
+	int n = 0;
 
 	printf("%s\n", ft_itoa(n));
 }
