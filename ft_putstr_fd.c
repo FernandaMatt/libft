@@ -1,45 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fcaetano <fernandacunha@id.uff.br>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/02 19:06:20 by fcaetano          #+#    #+#             */
-/*   Updated: 2022/06/03 15:53:53 by fcaetano         ###   ########.fr       */
+/*   Created: 2022/06/06 08:22:17 by fcaetano          #+#    #+#             */
+/*   Updated: 2022/06/06 08:27:33 by fcaetano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striteri(char *s, void(*f)(unsigned int, char*))
+void	ft_putstr_fd(char *s, int fd)
 {
-	unsigned int i;
-
 	if (s == NULL)
 		return;
-	i = 0;
-	while(s[i])
-	{
-		f(i, s + i);
-		i++;	
-	}
+	write(fd, s, ft_strlen(s));
 }
-
-/*
-void	ft_toupper(unsigned int i, char* c)
-{
-	i = 0;
-    if (*c >= 'a' && *c <= 'z')
-        *c -= 32;
-}
-#include <stdio.h>
-int main(void)
-{
-	char *str = "teste";
-
-	ft_striteri(str, ft_toupper);
-	printf("%s", str);
-	return (0);	
-}
-*/

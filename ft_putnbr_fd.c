@@ -1,45 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fcaetano <fernandacunha@id.uff.br>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/02 19:06:20 by fcaetano          #+#    #+#             */
-/*   Updated: 2022/06/03 15:53:53 by fcaetano         ###   ########.fr       */
+/*   Created: 2022/06/06 08:40:04 by fcaetano          #+#    #+#             */
+/*   Updated: 2022/06/06 08:42:05 by fcaetano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <libft.h>
 
-void	ft_striteri(char *s, void(*f)(unsigned int, char*))
+static void	ft_putnbr_rec(int nb, int fd)
 {
-	unsigned int i;
+	int	n;
 
-	if (s == NULL)
-		return;
-	i = 0;
-	while(s[i])
+	if (nb > 9)
 	{
-		f(i, s + i);
-		i++;	
+		n = (nb % 10) + '0';
+		ft_putnbr_rec(nb / 10, fd);
 	}
+	else
+		n = nb + '0';
+	write(fd, &n, 1);
 }
-
-/*
-void	ft_toupper(unsigned int i, char* c)
+void	ft_putnbr_fd(int n, int fd)
 {
-	i = 0;
-    if (*c >= 'a' && *c <= 'z')
-        *c -= 32;
+	if (n < 0)
+	{
+		if (n < -2147483647)
+		{
+			write(fd, "-2147483648", 11);
+			return ;
+		}
+		else
+		{
+			n *= -1;
+			write(fd, "-", 1);
+		}
+	}
+	ft_putnbr_rec(n, fd);
 }
-#include <stdio.h>
-int main(void)
-{
-	char *str = "teste";
-
-	ft_striteri(str, ft_toupper);
-	printf("%s", str);
-	return (0);	
-}
-*/

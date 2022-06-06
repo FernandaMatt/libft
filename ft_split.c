@@ -136,6 +136,9 @@ char **ft_split(char const *s, char c)
 	char **ret;
 	int nwords;
 
+	
+	if (s == NULL)
+		return(NULL);
 	nwords = count_words((char *)s, c);
 	ret = malloc((nwords + 1) * sizeof(*ret));
 	if (!ret)
@@ -145,7 +148,6 @@ char **ft_split(char const *s, char c)
 		ft_free(ret, nwords + 1);
 	return (ret);
 }
-
 
 /* #include <stdio.h>
 int main(void)

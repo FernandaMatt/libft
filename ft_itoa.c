@@ -56,10 +56,10 @@ char	*ft_itoa(int n)
 	return (ret);
 }
 
-#include <stdio.h>
+/* #include <stdio.h>
 int main(void)
 {
 	int n = 0;
 
 	printf("%s\n", ft_itoa(n));
-}
+} */
