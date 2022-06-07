@@ -6,7 +6,7 @@
 /*   By: fcaetano <fernandacunha@id.uff.br>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 15:39:31 by fcaetano          #+#    #+#             */
-/*   Updated: 2022/05/09 15:39:42 by fcaetano         ###   ########.fr       */
+/*   Updated: 2022/06/07 18:53:16 by fcaetano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,13 +53,3 @@ int	ft_atoi(char *str)
 	return (result);
 }
 
-/* #include <stdio.h>
-#include <stdlib.h>
-int main(void)
-{
-	char a[] = "  		\n +2147483646y66 sd ab567";
-
-	printf("%d\n", ft_atoi(a));
-	printf("%d\n", atoi(a));
-	return (0);
-} */
