@@ -1,3 +1,1 @@
-conferir funcionamento de calloc e strdup
-
 verificar strlcpy condições da linha 20 estão redundantes ??
