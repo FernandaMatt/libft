@@ -14,15 +14,15 @@
 
 void	*ft_memset(void *s, int c, size_t n)
 {
-	char *ptr;
+	char	*ptr;
 
 	ptr = s;
 	while (n > 0)
 	{
-		ptr[n-1] = c;
+		ptr[n - 1] = c;
 		n--;
 	}
-	return(s);
+	return (s);
 }
 
 /* #include <stdio.h>
@@ -43,5 +43,3 @@ int main(void)
 	ft_memset(ptr2, 'A', 6);
 	printf("%s\n\n", str2);
 } */
-// posso definir tipos globais no header para a biblioteca ?? é melhor fazer assim,
-//ou colocar em cada arquivo o tipo ? OLHAR NA NORMA !! se tem referência a isso

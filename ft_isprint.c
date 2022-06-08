@@ -28,7 +28,8 @@ int	main(void)
 	while (i <= 255)
 	{
 		c = i;
-		if ((isprint(c) != 0 && ft_isprint(c) == 0) || (isprint(c) == 0 && ft_isprint(c) != 0))
+		if ((isprint(c) != 0 && ft_isprint(c) == 0) || (isprint(c) ==
+		 0 && ft_isprint(c) != 0))
 		{
 			printf("Erro! Divergência no char: {%c} : {%d}\n", c, c);
 			return (0);

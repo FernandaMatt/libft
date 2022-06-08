@@ -52,4 +52,3 @@ int	ft_atoi(char *str)
 	result *= ft_catnbr(str);
 	return (result);
 }
-

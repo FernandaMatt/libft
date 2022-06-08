@@ -12,7 +12,7 @@
 
 int	ft_isascii(int c)
 {
-	if ((c >=0 && c<= 127))
+	if ((c >= 0 && c <= 127))
 		return (1);
 	return (0);
 }
@@ -28,9 +28,11 @@ int	main(void)
 	while (i <= 1025)
 	{
 		c = i;
-		if ((isascii(c) != 0 && ft_isascii(c) == 0) || (isascii(c) == 0 && ft_isascii(c) != 0))
+		if ((isascii(c) != 0 && ft_isascii(c) == 0) || (isascii(c) == 0 &&
+		 ft_isascii(c) != 0))
 		{
-			printf("Error! \nchar {%c} : ascii {%d} ERROR\nisascii: %d\nft_isascii: %d", c, c, isascii(c), ft_isascii(c));
+			printf("Error! \nchar {%c} : ascii {%d} ERROR\nisascii:
+			 %d\nft_isascii: %d", c, c, isascii(c), ft_isascii(c));
 			return (0);
 		}
 		printf("Char {%c} : {%d} OK\n", c, c);

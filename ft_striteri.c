@@ -12,17 +12,17 @@
 
 #include "libft.h"
 
-void	ft_striteri(char *s, void(*f)(unsigned int, char*))
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	unsigned int i;
+	unsigned int	i;
 
 	if (s == NULL)
-		return;
+		return ;
 	i = 0;
-	while(s[i])
+	while (s[i])
 	{
 		f(i, s + i);
-		i++;	
+		i++;
 	}
 }
 

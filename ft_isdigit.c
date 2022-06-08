@@ -12,7 +12,7 @@
 
 int	ft_isdigit(int c)
 {
-	if (c >='0' && c<= '9')
+	if (c >= '0' && c <= '9')
 		return (1);
 	return (0);
 }
@@ -28,9 +28,11 @@ int	main(void)
 	while (i <= 255)
 	{
 		c = i;
-		if ((isdigit(c) != 0 && ft_isdigit(c) == 0) || (isdigit(c) == 0 && ft_isdigit(c) != 0))
+		if ((isdigit(c) != 0 && ft_isdigit(c) == 0) || (isdigit(c) == 0 &&
+		 ft_isdigit(c) != 0))
 		{
-			printf("Error! \nchar {%c} : ascii {%d} ERROR\nisdigit: %d\nft_isdigit: %d", c, c, isdigit(c), ft_isdigit(c));
+			printf("Error! \nchar {%c} : ascii {%d} ERROR\nisdigit:
+			 %d\nft_isdigit: %d", c, c, isdigit(c), ft_isdigit(c));
 			return (0);
 		}
 		printf("char {%c} : ascii {%d} OK\n", c, c);

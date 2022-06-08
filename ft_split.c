@@ -10,70 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/* typedef unsigned long size_t;
-
-#include <stdlib.h>
-
-size_t ft_strlen(const char *str)
-{
-	size_t n;
-
-	n = 0;
-	while (str[n])
-	{
-		n++;
-	}
-	return (n);
-}
-
-size_t	ft_strlcpy(char *dest, const char *src, size_t destsize)
-{
-	size_t	i;
-
-	i = 0;
-	if (destsize == 0)
-		return(ft_strlen((char *)src));
-	while (src[i] && i < destsize - 1 && i != destsize)
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	dest[i] = 0;
-	return (ft_strlen((char *)src));
-}
-
-char	*ft_strdup(const char *src)
-{
-	char	*ret;
-	int		c;
-
-	c = ft_strlen(src) + 1;
-	ret = malloc(c * sizeof(*ret));
-	if (!ret)
-		return (ret);
-	c = 0;
-	while (src[c])
-	{
-		ret[c] = src[c];
-		c++;
-	}
-	ret[c] = 0;
-	return (ret);
-}
-
-char	*ft_substr(char const *s, unsigned int start, size_t len)
-{
-	char	*substr;
-
-	if (start >= ft_strlen(s))
-		return(ft_strdup(""));
-	substr = malloc((len+1)*sizeof(*s));
-	if (substr == NULL)
-		return (NULL);
-	ft_strlcpy(substr, &s[start], len+1);
-	return (substr);
-} */
-
 #include "libft.h"
 
 static int	count_words(char *str, char c)
@@ -97,15 +33,15 @@ static int	count_words(char *str, char c)
 
 static int	get_words(char **pptr, char *str, char c)
 {
-	int i;
-	int len;
+	int	i;
+	int	len;
 
 	i = 0;
-	while(*str)
+	while (*str)
 	{
 		if (*str != c)
 		{
-			len = 0;			
+			len = 0;
 			while (*str != c && *str)
 			{
 				str++;
@@ -131,14 +67,13 @@ static void	ft_free(char **pptr, size_t size)
 	pptr = NULL;
 }
 
-char **ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
-	char **ret;
-	int nwords;
+	char	**ret;
+	int		nwords;
 
-	
 	if (s == NULL)
-		return(NULL);
+		return (NULL);
 	nwords = count_words((char *)s, c);
 	ret = malloc((nwords + 1) * sizeof(*ret));
 	if (!ret)

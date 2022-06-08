@@ -25,6 +25,7 @@ static void	ft_putnbr_rec(int nb, int fd)
 		n = nb + '0';
 	write(fd, &n, 1);
 }
+
 void	ft_putnbr_fd(int n, int fd)
 {
 	if (n < 0)

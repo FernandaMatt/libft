@@ -12,9 +12,9 @@
 
 #include "libft.h"
 
-size_t ft_strlen(const char *str)
+size_t	ft_strlen(const char *str)
 {
-	size_t n;
+	size_t	n;
 
 	n = 0;
 	while (str[n])
@@ -23,7 +23,6 @@ size_t ft_strlen(const char *str)
 	}
 	return (n);
 }
-
 
 /* #include <stdio.h>
 #include <string.h>
@@ -34,5 +33,3 @@ int main(void)
 	printf("Função original:	%ld\n", strlen(&string[0]));
 	printf("Função ft:		%ld\n", ft_strlen(&string[0]));
 } */
-
-//temos que criar o typedef assim como na função original? ou bastaria retornar um long unsigned int ??

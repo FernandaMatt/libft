@@ -12,7 +12,7 @@
 
 int	ft_isalpha(int c)
 {
-	if ((c >='A' && c<= 'Z') || (c >= 'a' && c <= 'z'))
+	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
 		return (1);
 	return (0);
 }
@@ -28,9 +28,11 @@ int	main(void)
 	while (i <= 255)
 	{
 		c = i;
-		if ((isalpha(c) != 0 && ft_isalpha(c) == 0) || (isalpha(c) == 0 && ft_isalpha(c) != 0))
+		if ((isalpha(c) != 0 && ft_isalpha(c) == 0) || (isalpha(c) == 0 &&
+		 ft_isalpha(c) != 0))
 		{
-			printf("Error! \nchar {%c} : ascii {%d} ERROR\nisalpha: %d\nft_isalpha: %d", c, c, isalpha(c), ft_isalpha(c));
+			printf("Error! \nchar {%c} : ascii {%d} ERROR\nisalpha:
+			 %d\nft_isalpha: %d", c, c, isalpha(c), ft_isalpha(c));
 			return (0);
 		}
 		printf("char {%c} : ascii {%d} OK\n", c, c);
