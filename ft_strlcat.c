@@ -22,7 +22,7 @@ size_t	ft_strlcat(char *dest, const char *src,	size_t destsize)
 	offset = ft_strlen(dest);
 	i = 0;
 	if (destsize == 0)
-		return (s_len + offset);
+		return (s_len + destsize);
 	s_len = ft_strlen(src);
 	while (src[i] && ((offset + i) < destsize - 1))
 	{
@@ -40,13 +40,11 @@ size_t	ft_strlcat(char *dest, const char *src,	size_t destsize)
 #include <string.h>
 int main(void)
 {
-    char string1[] = "there is no stars in the sky";
-    char string2[] = "there is no stars in the sky";
-    char stringsrc[] = "the cake is a lie !\0I'm hidden lol\r\n";
-	size_t sizedest = strlen("the cake is a lie !\0I'm hidden lol\r\n") + 4;
+	char dest[30]; memset(dest, 0, 30);
+	char * src = (char *)"AAAAAAAAA";
+	dest[0] = 'B';
     printf(" --- Função ft_original ---\n");
-	printf("Valor retornado: %lu\n", ft_strlcat(string1, stringsrc, sizedest));
-	printf("%s\n\n", string1);
+	printf("Valor retornado: %lu\n", ft_strlcat(dest, src, 0));
     // printf(" ---  Função original   ---\n");
 	// printf("Valor retornado: %lu\n", strlcat(string2, stringsrc, sizedest));
 	// printf("%s\n\n", string2);
