@@ -29,7 +29,8 @@ size_t	ft_strlcat(char *dest, const char *src,	size_t destsize)
 		dest[offset + i] = src[i];
 		i++;
 	}
-	dest[offset + i] = '\0';
+	if (ft_strlen(dest) <= destsize)
+		dest[offset + i] = '\0';
 	if (destsize > offset)
 		return (s_len + offset);
 	else
@@ -40,13 +41,15 @@ size_t	ft_strlcat(char *dest, const char *src,	size_t destsize)
 #include <string.h>
 int main(void)
 {
-	char dest[30]; memset(dest, 0, 30);
-	char * src = (char *)"AAAAAAAAA";
-	dest[0] = 'B';
+	char *dest;
+	char *src1 = (char *)"lorem ipsum dolor sit amet";
+	char *src2 = (char *)"lorem ipsum dolor sit amet";
+	ft_memset(dest, 'r', 15);
     printf(" --- Função ft_original ---\n");
-	printf("Valor retornado: %lu\n", ft_strlcat(dest, src, 0));
-    // printf(" ---  Função original   ---\n");
-	// printf("Valor retornado: %lu\n", strlcat(string2, stringsrc, sizedest));
-	// printf("%s\n\n", string2);
+	printf("Valor retornado: %lu\n", ft_strlcat(dest, src1, 5));
+    printf(" ---  Função original   ---\n");
+	printf("Valor retornado: %lu\n", strlcat(dest, src2, 5));
+	printf("ft_original: %s\n\n", src1);
+	printf("original: %s\n\n", src2);
     return(0);
 } */
